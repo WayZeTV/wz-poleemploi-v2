@@ -1,6 +1,6 @@
 # wz-poleemploi
 
-Bonjour à tous je vous présente aujourd'hui ce script Pôle Emploi qui permettera aux joueurs de votre serveur de pouvoir prendre des métiers non whitelistes et de se renseigner sur les métiers whitelistes.
+Bonjour à tous je vous présente aujourd'hui ce script Pôle Emploi qui permettera aux joueurs de votre serveur de pouvoir prendre des métiers non whitelistes et de se renseigner sur les métiers whitelists.
 
 Le nom de la ressource n'est pas modifiable !
 
