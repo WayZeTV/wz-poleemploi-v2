@@ -1,13 +1,13 @@
 # wz-poleemploi
 
-Bonjour à tous je vous présente aujourd'hui ce script Armurerie réalisé en RageUI qui permettera à vos joueurs d'acheter des armes en toute légalité.Ceci est une V1 et plusieurs autres versions sont à venir.
+Bonjour à tous je vous présente aujourd'hui ce script Pôle Emploi qui permettera aux joueurs de votre serveur de pouvoir prendre des métiers non whitelistes et de se renseigner sur les métiers whitelistes.
 
 Le nom de la ressource n'est pas modifiable !
 
 -----------------------------------------------------
 -----------------------------------------------------
 
-Hello everyone I present to you today this Armory script made in RageUI which will allow your players to buy weapons legally. This is a V1 and several other versions are coming.
+Hello everyone I present to you today this Pôle emploi script which allows players on your server to be able to take non-whitelist trades and to learn about whitelist trades.
 
 The name of the resource cannot be changed!
 
