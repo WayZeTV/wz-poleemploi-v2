@@ -31,10 +31,9 @@ Si vous avez besoin d'aide pour l'installation : https://discord.gg/eX9GXWN
 If you need help installing: https://discord.gg/eX9GXWN
 
 # Author 
-Discord : WayZe#0001
+<a href="https://discord.gg/Wc4ujJNcpQ"><img src="https://discord.com/api/guilds/723245101282885742/widget.png?style=banner1"></a>
 [![Twitter Follow](https://img.shields.io/twitter/follow/WayZeTV?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/WayZeTV)
 [![Youtube Follow](https://img.shields.io/youtube/channel/subscribers/UCwrVESX4HcDwRnXZagsGV1Q?label=s%27abonner&style=for-the-badge)](https://www.youtube.com/channel/UCwrVESX4HcDwRnXZagsGV1Q/subscribe)
-<a href="https://discord.gg/Wc4ujJNcpQ"><img src="https://discord.com/api/guilds/723245101282885742/widget.png?style=banner1"></a>
 
 ### License
 wz-poleemploi-v2 - RageUI Script
