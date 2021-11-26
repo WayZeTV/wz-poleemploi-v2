@@ -48,11 +48,15 @@ end
 ---@param Type string
 ---@param Name string
 ---@param Settings string
----@param Value any
+---@param Value any optional
 ---@return void
 ---@public
 function RMenu:Settings(Type, Name, Settings, Value)
-    self[Type][Name][Settings] = Value
+    if Value ~= nil then
+        self[Type][Name][Settings] = Value
+    else
+        return self[Type][Name][Settings]
+    end
 end
 
 

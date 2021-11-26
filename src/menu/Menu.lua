@@ -29,7 +29,7 @@ function RageUI.CreateMenu(Title, Subtitle, X, Y, TextureDictionary, TextureName
     Menu.Description = nil
     Menu.DescriptionHeight = RageUI.Settings.Items.Description.Background.Height
     Menu.X = X or 0
-    Menu.Y = Y or 0
+    Menu.Y = Y or 30
     Menu.Parent = nil
     Menu.WidthOffset = 100
     Menu.Open = false

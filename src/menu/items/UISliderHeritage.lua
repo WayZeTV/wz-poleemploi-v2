@@ -1,17 +1,17 @@
 ---@type table
 local SettingsButton = {
     Rectangle = { Y = 0, Width = 431, Height = 38 },
-    Text = { X = 8, Y = 3, Scale = 0.33 },
+    Text = { X = 8, Y = 3, Scale = 0.26 },
     SelectedSprite = { Dictionary = "commonmenu", Texture = "gradient_nav", Y = 0, Width = 431, Height = 38 },
 }
 
 ---@type table
 local SettingsSlider = {
-    Background = { X = 250, Y = 14.5, Width = 150, Height = 9 },
-    Slider = { X = 250, Y = 14.5, Width = 75, Height = 9 },
-    Divider = { X = 323.5, Y = 9, Width = 2.5, Height = 20 },
-    LeftArrow = { Dictionary = "mpleaderboard", Texture = "leaderboard_female_icon", X = 215, Y = 0, Width = 40, Height = 40 },
-    RightArrow = { Dictionary = "mpleaderboard", Texture = "leaderboard_male_icon", X = 395, Y = 0, Width = 40, Height = 40 },
+    Background = { X = 250, Y = 14.5, Width = 150, Height = 8 },
+    Slider = { X = 250, Y = 14.5, Width = 75, Height = 8 },
+    Divider = { X = 323.5, Y = 9, Width = 2.5, Height = 18 },
+    LeftArrow = { Dictionary = "mpleaderboard", Texture = "leaderboard_female_icon", X = 215, Y = 0, Width = 40, Height = 38 },
+    RightArrow = { Dictionary = "mpleaderboard", Texture = "leaderboard_male_icon", X = 395, Y = 0, Width = 40, Height = 38 },
 }
 
 local Items = {}
@@ -27,7 +27,7 @@ end
 ---@param ItemIndex number
 ---@param Description string
 ---@param Callback function
-function RageUI.UISliderHeritage(Label, ItemIndex, Description, Callback)
+function RageUI.UISliderHeritage(Label, ItemIndex, Description, Callback, Value)
 
     ---@type table
     local CurrentMenu = RageUI.CurrentMenu;
@@ -42,6 +42,7 @@ function RageUI.UISliderHeritage(Label, ItemIndex, Description, Callback)
             if CurrentMenu.Pagination.Minimum <= Option and CurrentMenu.Pagination.Maximum >= Option then
 
                 ---@type number
+                local value = Value or 0.1
                 local Selected = CurrentMenu.Index == Option
 
                 ---@type boolean
@@ -87,14 +88,14 @@ function RageUI.UISliderHeritage(Label, ItemIndex, Description, Callback)
                 RageUI.ItemsDescription(CurrentMenu, Description, Selected);
 
                 if Selected and (CurrentMenu.Controls.SliderLeft.Active or (CurrentMenu.Controls.Click.Active and LeftArrowHovered)) and not (CurrentMenu.Controls.SliderRight.Active or (CurrentMenu.Controls.Click.Active and RightArrowHovered)) then
-                    ItemIndex = ItemIndex - 0.1
+                    ItemIndex = ItemIndex - value
                     if ItemIndex < 0.1 then
                         ItemIndex = 0.0
                     else
                         RageUI.PlaySound(Audio[Audio.Use].Slider.audioName, Audio[Audio.Use].Slider.audioRef, true)
                     end
                 elseif Selected and (CurrentMenu.Controls.SliderRight.Active or (CurrentMenu.Controls.Click.Active and RightArrowHovered)) and not (CurrentMenu.Controls.SliderLeft.Active or (CurrentMenu.Controls.Click.Active and LeftArrowHovered)) then
-                    ItemIndex = ItemIndex + 0.1
+                    ItemIndex = ItemIndex + value
                     if ItemIndex > #Items then
                         ItemIndex = 10
                     else

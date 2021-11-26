@@ -13,12 +13,13 @@ local GridPanelVertical = {
 ---@param TopText string
 ---@param BottomText string
 ---@param Callback table
+---@param Index number
 ---@return table
 ---@public
-function RageUI.GridPanelVertical(Index, Y, TopText, BottomText, Callback)
+function RageUI.GridPanelVertical(Y, TopText, BottomText, Callback, Index)
     local CurrentMenu = RageUI.CurrentMenu
     if CurrentMenu ~= nil then
-        if CurrentMenu() and (CurrentMenu.Index == Index)  then
+        if CurrentMenu() and (Index == nil or (CurrentMenu.Index == Index)) then
 
             ---@type boolean
             local Hovered = RageUI.IsMouseInBounds(CurrentMenu.X + GridPanelVertical.Grid.X + CurrentMenu.SafeZoneSize.X + 20, CurrentMenu.Y + GridPanelVertical.Grid.Y + CurrentMenu.SafeZoneSize.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset + 20, GridPanelVertical.Grid.Width + CurrentMenu.WidthOffset - 40, GridPanelVertical.Grid.Height - 40)

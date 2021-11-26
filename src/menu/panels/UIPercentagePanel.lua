@@ -1,10 +1,10 @@
 local Percentage = {
-    Background = { Dictionary = "commonmenu", Texture = "gradient_bgd", Y = 4, Width = 431, Height = 76 },
-    Bar = { X = 9, Y = 50, Width = 413, Height = 10 },
+    Background = { Dictionary = "commonmenu", Texture = "gradient_bgd", Y = 4, Width = 431, Height = 65 },
+    Bar = { X = 9, Y = 50, Width = 413, Height = 7 },
     Text = {
-        Left = { X = 25, Y = 15, Scale = 0.35 },
-        Middle = { X = 215.5, Y = 15, Scale = 0.35 },
-        Right = { X = 398, Y = 15, Scale = 0.35 },
+        Left = { X = 25, Y = 15, Scale = 0.26 },
+        Middle = { X = 215.5, Y = 15, Scale = 0.26 },
+        Right = { X = 398, Y = 15, Scale = 0.26 },
     },
 }
 
@@ -14,13 +14,14 @@ local Percentage = {
 ---@param MinText string
 ---@param MaxText string
 ---@param Callback function
+---@param Index number
 ---@return nil
 ---@public
-function RageUI.PercentagePanel(Index, Percent, HeaderText, MinText, MaxText, Callback)
+function RageUI.PercentagePanel(Percent, HeaderText, MinText, MaxText, Callback, Index)
     local CurrentMenu = RageUI.CurrentMenu
 
     if CurrentMenu ~= nil then
-        if CurrentMenu() and (CurrentMenu.Index == Index) then
+        if CurrentMenu() and (Index == nil or (CurrentMenu.Index == Index)) then
 
             ---@type boolean
             local Hovered = RageUI.IsMouseInBounds(CurrentMenu.X + Percentage.Bar.X + CurrentMenu.SafeZoneSize.X, CurrentMenu.Y + Percentage.Bar.Y + CurrentMenu.SafeZoneSize.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset - 4, Percentage.Bar.Width + CurrentMenu.WidthOffset, Percentage.Bar.Height + 8)

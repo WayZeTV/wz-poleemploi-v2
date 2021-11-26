@@ -16,13 +16,13 @@ local Colour = {
 ---@param Callback function
 ---@return nil
 ---@public
-function RageUI.ColourPanel(Index, Title, Colours, MinimumIndex, CurrentIndex, Callback)
+function RageUI.ColourPanel(Title, Colours, MinimumIndex, CurrentIndex, Callback, Index)
 
     ---@type table
     local CurrentMenu = RageUI.CurrentMenu;
 
     if CurrentMenu ~= nil then
-        if CurrentMenu() and (CurrentMenu.Index == Index) then
+        if CurrentMenu() and (Index == nil or (CurrentMenu.Index == Index)) then
 
             ---@type number
             local Maximum = (#Colours > 9) and 9 or #Colours
@@ -51,13 +51,39 @@ function RageUI.ColourPanel(Index, Title, Colours, MinimumIndex, CurrentIndex, C
 
             RenderText((Title and Title or "") .. " (" .. CurrentIndex .. " of " .. #Colours .. ")", CurrentMenu.X + RageUI.Settings.Panels.Grid.Text.Top.X + (CurrentMenu.WidthOffset / 2), CurrentMenu.Y + RageUI.Settings.Panels.Grid.Text.Top.Y + CurrentMenu.SubtitleHeight + RageUI.ItemOffset, 0, RageUI.Settings.Panels.Grid.Text.Top.Scale, 245, 245, 245, 255, 1)
 
+
+            local Audio = RageUI.Settings.Audio
+            if (CurrentMenu.Index == Index) and (CurrentMenu.Controls.Left.Active) and not (CurrentMenu.Controls.Right.Active) then
+                CurrentIndex = CurrentIndex - 1
+
+                if CurrentIndex < 1 then
+                    CurrentIndex = #Colours
+                    MinimumIndex = #Colours - Maximum + 1
+                elseif CurrentIndex < MinimumIndex then
+                    MinimumIndex = MinimumIndex - 1
+                end
+                Selected = true
+                RageUI.PlaySound(Audio[Audio.Use].Select.audioName, Audio[Audio.Use].Select.audioRef)
+            elseif (CurrentMenu.Index == Index) and (CurrentMenu.Controls.Right.Active) and not (CurrentMenu.Controls.Left.Active) then
+                CurrentIndex = CurrentIndex + 1
+
+
+                if CurrentIndex > #Colours then
+                    CurrentIndex = 1
+                    MinimumIndex = 1
+                elseif CurrentIndex > MinimumIndex + Maximum - 1 then
+                    MinimumIndex = MinimumIndex + 1
+                end
+                Selected = true
+                RageUI.PlaySound(Audio[Audio.Use].Select.audioName, Audio[Audio.Use].Select.audioRef)
+            end
+
+
             if Hovered or LeftArrowHovered or RightArrowHovered then
                 if RageUI.Settings.Controls.Click.Active then
                     Selected = true
-
                     if LeftArrowHovered then
                         CurrentIndex = CurrentIndex - 1
-
                         if CurrentIndex < 1 then
                             CurrentIndex = #Colours
                             MinimumIndex = #Colours - Maximum + 1
@@ -66,7 +92,6 @@ function RageUI.ColourPanel(Index, Title, Colours, MinimumIndex, CurrentIndex, C
                         end
                     elseif RightArrowHovered then
                         CurrentIndex = CurrentIndex + 1
-
                         if CurrentIndex > #Colours then
                             CurrentIndex = 1
                             MinimumIndex = 1
@@ -82,6 +107,7 @@ function RageUI.ColourPanel(Index, Title, Colours, MinimumIndex, CurrentIndex, C
                     end
                 end
             end
+
 
             RageUI.ItemOffset = RageUI.ItemOffset + Colour.Background.Height + Colour.Background.Y
 
