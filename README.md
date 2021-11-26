@@ -1,13 +1,13 @@
 # wz-poleemploi-v2
 
-Bonjour à tous je vous présente aujourd'hui ce script Pôle Emploi réalisé en RageUI qui permettera aux joueurs de votre serveur de pouvoir prendre des métiers non whitelists et de se renseigner sur les métiers whitelists. Le script tourne à 0.00/0.01 au repos.
+Bonjour à tous je vous présente aujourd'hui ce script Pôle Emploi réalisé en RageUI qui permettera aux joueurs de votre serveur de pouvoir prendre des métiers non whitelists et de se renseigner sur les métiers whitelists. Le script tourne à 0.00/0.01ms au repos.
 
 Les fichiers sont cryptés pour éviter le dump. Le nom de la ressource n'est pas modifiable !
 
 -----------------------------------------------------
 -----------------------------------------------------
 
-Hello everyone, I present to you today this Pôle Emploi script carried out in RageUI which will allow players on your server to be able to take non-whitelist jobs and learn about whitelist jobs. The script runs at 0.00 / 0.01 at rest.
+Hello everyone, I present to you today this Pôle Emploi script carried out in RageUI which will allow players on your server to be able to take non-whitelist jobs and learn about whitelist jobs. The script runs at 0.00 / 0.01ms at rest.
 
 Files are encrypted to avoid dump. The name of the resource cannot be changed!
 
