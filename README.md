@@ -12,9 +12,8 @@ Hello everyone, I present to you today this Pôle Emploi script carried out in R
 Files are encrypted to avoid dump. The name of the resource cannot be changed!
 
 # Requirements
-
+Si vous utilisez ESX :
 - [esx_jobs](https://github.com/esx-framework/esx_jobs) 
-Si vous utilisez ESX
 
 # Screenshot
 
